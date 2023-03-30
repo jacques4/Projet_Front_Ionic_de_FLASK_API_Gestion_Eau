@@ -1,0 +1,86 @@
+<style>
+  .droit{ 
+    text-align: right;
+    margin-top: 25px;
+  }
+  </style>
+
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Livraison</ion-title>
+    <ion-button slot="start" color="light">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+     </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="droit">
+    <input  (input)="search()"  type="search" placeholder="Rechercher.." name="search" [(ngModel)]="searchInput">
+    </div>
+
+  <ion-list>
+
+    <ion-item *ngFor="let data of livrer">
+
+      <ion-label>
+    
+      <b> {{data.commande?.produit?.marque?.nom}} </b> {{data.quantite}}  <br>
+        {{data.commande?.client?.nom +' '}} {{data.commande?.client?.prenom}}
+         <br>
+       <span class="badge bg-success" *ngIf="data?.status">Validé</span>
+      <span class="badge bg-danger" *ngIf="!data?.status">Annulé</span>
+    </ion-label>
+
+     <ion-button (click)="openDetail(data)">+</ion-button>
+     
+    </ion-item>
+  </ion-list>
+
+  <ion-modal #modal trigger="opene-modale">
+    <ng-template>
+      <ion-content>
+        <ion-toolbar>
+          <ion-title style="text-align: center;">Ajout</ion-title>
+          <ion-buttons slot="end">
+          </ion-buttons>
+        </ion-toolbar>
+
+       <form  [formGroup]="form" (ngSubmit)="onCreate()">
+        <div style="color: red; ">{{error}}</div>
+        <ion-list>
+          <ion-item>
+            <ion-select interface="action-sheet" placeholder="COMMANDE" [multiple]="false" formControlName="commande">
+              <ion-select-option  *ngFor="let tc of listecommande" [value]="tc.id">{{tc.client?.nom +' '}}{{tc.client?.prenom}}</ion-select-option>         
+            </ion-select>
+          </ion-item>
+        </ion-list>
+        <ion-item fill="solid">
+          <ion-label position="floating"  >Quantite</ion-label>
+          <ion-input placeholder="Prenom" type="number" formControlName="quantite"></ion-input>
+        </ion-item>
+        <ion-item fill="solid">
+          <ion-label position="floating" >Date</ion-label>
+          <ion-input placeholder="Email" type="date" formControlName="date"></ion-input>
+        </ion-item>
+        <div style="color: red;">{{bien}}</div>
+        <ion-button color="danger" (click)="modal.dismiss()">Fermer</ion-button> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        <ion-button color="primary" type="submit" [disabled]="form.invalid">Valider</ion-button>
+      </form>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end" class="button-float">
+    <ion-fab-button>
+      <ion-icon name="chevron-up-circle"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button id="opene-modale" expand="block">
+        <ion-icon name="person-add-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+
+</ion-content>

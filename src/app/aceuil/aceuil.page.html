@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>ESSIVI 💧</ion-title>
+    <ion-button slot="start" color="light">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+     </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button routerLink="../client" title="client">
+        <ion-icon name="person">
+          <ion-label>Account</ion-label>
+        </ion-icon>
+      </ion-tab-button>
+      <ion-tab-button routerLink="../commande" title="commande">
+        <ion-icon name="server">
+          <ion-label>Commande</ion-label>
+        </ion-icon>
+      </ion-tab-button>
+      <ion-tab-button routerLink="../livrer" title="livraison">
+        <ion-icon name="mail">
+          <ion-label>Livraison</ion-label>
+        </ion-icon>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+
+   
+  <div class="banner ion-padding">
+    <h1> Essivi Sarl 💧 </h1>
+    <img src="../../assets/bg2.jpg" routerLink="/produit" title="background">
+
+  </div>
+
+
+</ion-content>

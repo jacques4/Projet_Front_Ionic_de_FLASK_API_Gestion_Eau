@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Connexion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="login-section ion-padding">
+    <div class="heading ion-padding">
+ <h1>ESSIVI SARL</h1>
+ <p><sup><i>connectez vous pour contunier</i></sup> </p>
+    </div>
+
+<form class="row g-3 needs-validation" [formGroup]="formGroup"  (ngSubmit)="onLogin()"> 
+<ion-list>
+  <div class="login-form ion-padding">
+    <div class="form-input">
+      <ion-icon name="mail-outline"></ion-icon>
+      <ion-item>
+        <ion-label position="floating">Login</ion-label>
+        <ion-input type="text" formControlName="login"></ion-input>
+      </ion-item>
+    </div>
+    <div class="form-input">
+      <ion-icon name="lock-closed-outline"></ion-icon>
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password" formControlName="mdp"></ion-input>
+      </ion-item>
+    </div>
+  </div>
+  <div style="color: red;"> {{erreur}}</div>
+  <div class="action-buttons ion-padding">
+    <ion-button  class="login-button" type="submit">Login</ion-button>
+    <p><a [routerLink]="['/forgot-password']" class="small-text">mot de passe oubliee ?</a></p>
+   <!-- <ion-button class="signup-button" size="large" fill="outline" routerLink="#">Register</ion-button> -->
+  </div>
+</ion-list>
+  </form>
+
+</div>
+
+  
+</ion-content>

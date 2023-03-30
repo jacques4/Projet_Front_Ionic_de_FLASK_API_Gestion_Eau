@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Livraison</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-card >
+    <ion-card-header>
+      <ion-card-title>
+      Details
+      </ion-card-title>
+  <ion-card-subtitle>
+  
+  </ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item >   
+
+        *Nom Produit:{{' '+data.commande?.produit?.marque?.nom}}  <br>
+        *Client Livrer:{{' '+data.commande.client.nom}} {{data.commande.client.prenom}} <br>
+        *Email:{{' '+data.commande.client.email}}  <br>
+        *Telephone:{{' '+data.commande.client.tel}}  <br>
+        *Prix:{{' '+data.commande.prix}}  <br>
+        *Adresse:{{' '+data.commande.client.adresse}}  <br>
+        *Date Livrer:{{' '+data.date | date: 'dd/MM/yyyy'}} <br>
+        *Livrer:{{' '+data.quantite}} <br>
+        *Restant:{{' '+data.commande.quantite}} <br>
+        *Livrer Par:{{' '+data.utilisateur.personne.nom+' '}} {{data.utilisateur.personne.prenom}} <br>
+       
+      </ion-item>
+      <ion-button slot="large" routerLink="/livrer" color="primary">Fermer</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

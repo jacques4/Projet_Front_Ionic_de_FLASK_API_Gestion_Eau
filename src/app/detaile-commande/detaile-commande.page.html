@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>detaileCommande</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-card >
+    <ion-card-header>
+      <ion-card-title>
+      Detail
+      </ion-card-title>
+  <ion-card-subtitle>
+  
+  </ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item >
+    *Nom Produit :{{data.produit?.marque?.nom}}  <br>
+    *Quantité :{{data.quantite}}  <br>
+    *Prix :{{data.prix}}  <br>
+    *Description Produit :{{data.produit?.description}}  <br>
+    *Date Commandé :{{data.date  | date: 'dd/MM/yyyy'}}  <br>
+    *Nom Client :{{data.client?.nom+' '}}{{data.client?.prenom}}  <br>
+      </ion-item>
+      <ion-button slot="large" routerLink="/commande" color="primary">Fermer</ion-button>
+    </ion-card-content>
+  </ion-card>
+  
+  
+  </ion-content>

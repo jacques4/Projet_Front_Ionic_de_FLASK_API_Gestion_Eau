@@ -24,3 +24,47 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+@import "~leaflet/dist/leaflet.css";
+
+
+ion-modal {
+    --height: 50%;
+    --border-radius: 16px;
+    --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  }
+  
+  ion-modal::part(backdrop) {
+    background: rgba(209, 213, 219);
+    opacity: 1;
+  }
+  
+  ion-modal ion-toolbar {
+    --background: rgb(23, 112, 227);
+    --color: white;
+  }
+
+   * {
+    font-family: "Playfair Display" , serif;
+   }
+
+   .product-info p{
+    font-family: sans-serif;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #868a8f;
+    line-height: 1.4;
+   }
+
+   .swiper-container-horizontal > .swiper-pagination-bullets{
+
+    position: relative;
+    text-align: left;
+    padding-top: 25px;
+    padding-left: 50px;
+    .swiper-pagination-bullet{
+      background: #919297 !important;
+      width: 5vw;
+      border-radius: 0;
+      height: 4px;
+    }
+   }
